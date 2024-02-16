@@ -51,5 +51,5 @@ func (s *Server) GracefulStop(ctx context.Context) error {
 
 // registerHandlers registers http endpoints and their handlers
 func (s *Server) registerHandlers(ctx context.Context) {
-	s.mux.Handle("/v1/invoices", s.invoicesHandler(ctx))
+	s.mux.Handle("/api/invoices", s.invoicesHandler(ctx))
 }

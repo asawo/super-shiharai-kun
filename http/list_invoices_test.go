@@ -78,7 +78,7 @@ func Test_ListInvoices_validation(t *testing.T) {
 				"Content-Type":  {"application/json"},
 				"Authorization": {fmt.Sprintf("Basic %s", base64.StdEncoding.EncodeToString([]byte("username:password")))},
 			},
-			url:       fmt.Sprintf("http://localhost:8080/v1/invoices?start_date=%s&end_date=%s", oneYearLater, oneYearBefore),
+			url:       fmt.Sprintf("http://localhost:8080/api/invoices?start_date=%s&end_date=%s", oneYearLater, oneYearBefore),
 			want:      nil,
 			error:     true,
 			errorCode: errors.InvalidRequest,
@@ -90,7 +90,7 @@ func Test_ListInvoices_validation(t *testing.T) {
 				"Content-Type":  {"application/json"},
 				"Authorization": {fmt.Sprintf("Basic %s", base64.StdEncoding.EncodeToString([]byte("username:password")))},
 			},
-			url: fmt.Sprintf("http://localhost:8080/v1/invoices?start_date=%s&end_date=%s", oneYearBefore, oneYearLater),
+			url: fmt.Sprintf("http://localhost:8080/api/invoices?start_date=%s&end_date=%s", oneYearBefore, oneYearLater),
 			want: &service.ListInvoicesRequest{
 				Email:     "username",
 				Password:  "password",
