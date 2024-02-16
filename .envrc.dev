@@ -1,0 +1,6 @@
+export ENV=dev
+export DB_ROOT_PASSWORD=r00t-p4ssw0rD
+export DB_NAME=invoices
+export DB_USER=invoices-user
+export DB_PASSWORD=p4ssw0rD
+export LOG_LEVEL=DEBUG
