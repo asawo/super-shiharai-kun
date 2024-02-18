@@ -73,7 +73,25 @@ curl -i -X GET \
 ```
 Sample response:
 ```json
-{"result":"OK","data":[{"id":"b796e13d-bd76-46a6-af4e-159f8e19587f","issue_date":"2024-02-15T11:12:57.06461+09:00","payment_amount":100,"commission":4,"commission_rate":0.04,"tax":1.1,"tax_rate":0.1,"amount":104.4,"due_date":"2024-03-16T11:12:57.06461+09:00","company_id":1,"service_provider_id":1,"status":"OUTSTANDING"}]}
+{
+  "result": "OK",
+  "data": [
+    {
+      "id": "b796e13d-bd76-46a6-af4e-159f8e19587f",
+      "issue_date": "2024-02-15T11:12:57.06461+09:00",
+      "payment_amount": 100,
+      "commission": 4,
+      "commission_rate": 0.04,
+      "tax": 1.1,
+      "tax_rate": 0.1,
+      "amount": 104.4,
+      "due_date": "2024-03-16T11:12:57.06461+09:00",
+      "company_id": 1,
+      "service_provider_id": 1,
+      "status": "OUTSTANDING"
+    }
+  ]
+}
 ```
 Sample invalid request
 ```bash
@@ -84,7 +102,11 @@ curl -i -X GET \
 ```
 Sample response:
 ```json
-{"result":"error","code":400,"message":"http.validateListInvoicesRequest: start_date 2024-06-01 is after end_date 2024-04-01"}
+{
+  "result": "error",
+  "code": 400,
+  "message": "http.validateListInvoicesRequest: start_date 2024-06-01 is after end_date 2024-04-01"
+}
 ```
 
 ## `POST /api/invoice`
@@ -98,7 +120,23 @@ curl -i -X POST \
 ```
 Sample response:
 ```json
-{"result":"OK","data":{"id":"1291401c-6766-470c-bb1e-298a6b6f0928","issue_date":"2024-02-16T10:10:17.893791+09:00","payment_amount":10000,"commission":400,"commission_rate":0.04,"tax":40,"tax_rate":0.1,"amount":10440,"due_date":"2024-06-12T17:11:15.504318+09:00","company_id":2,"service_provider_id":3,"status":"OUTSTANDING"}}
+{
+  "result": "OK",
+  "data": {
+    "id": "1291401c-6766-470c-bb1e-298a6b6f0928",
+    "issue_date": "2024-02-16T10:10:17.893791+09:00",
+    "payment_amount": 10000,
+    "commission": 400,
+    "commission_rate": 0.04,
+    "tax": 40,
+    "tax_rate": 0.1,
+    "amount": 10440,
+    "due_date": "2024-06-12T17:11:15.504318+09:00",
+    "company_id": 2,
+    "service_provider_id": 3,
+    "status": "OUTSTANDING"
+  }
+}
 ```
 Sample invalid request
 ```bash
@@ -110,5 +148,9 @@ curl -i -X POST \
 ```
 Sample response
 ```json
-{"result":"error","code":401,"message":"service.(*Impl).validateUser: failed to authenticate user Arthur (arthur@example.com), wrong password"}
+{
+  "result": "error",
+  "code": 401,
+  "message": "service.(*Impl).validateUser: failed to authenticate user Arthur (arthur@example.com), wrong password"
+}
 ```
